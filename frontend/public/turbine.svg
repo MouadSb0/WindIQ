@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <circle cx="50" cy="50" r="48" fill="#060c18" stroke="#00d4ff" stroke-width="2"/>
+  <path d="M48 45 L52 45 L54 90 L46 90 Z" fill="#00d4ff" opacity="0.4"/>
+  <circle cx="50" cy="45" r="5" fill="#00ffcc"/>
+  <!-- 3 Blades -->
+  <path d="M50 45 C48 30, 46 15, 50 5 C54 15, 52 30, 50 45 Z" fill="#00d4ff"/>
+  <path d="M50 45 C63 53, 76 60, 85 55 C77 46, 64 45, 50 45 Z" fill="#00ffcc" opacity="0.9"/>
+  <path d="M50 45 C37 53, 24 60, 15 55 C23 46, 36 45, 50 45 Z" fill="#7b4cff" opacity="0.9"/>
+</svg>
