@@ -1,4 +1,4 @@
-# WindIQ — Point-in-Time UK Wind Generation Forecast Platform
+WindIQ — Point-in-Time UK Wind Generation Forecast Platform
 
 > **UK Day-Ahead Energy Market Decision Intelligence**  
 > Built for wholesale electricity trading teams procuring reserve/thermal capacity without look-ahead bias.
@@ -11,7 +11,7 @@
 
 ---
 
-## 🌟 Executive Summary & Problem Setting
+## Executive Summary & Problem Setting
 
 In the UK wholesale electricity market, day-ahead purchase decisions for delivery day $D$ must be submitted by noon on $D-1$ (the gate closure / day-ahead auction deadline). Because wind generation is intermittent and weather-dependent, energy suppliers must forecast wind yield accurately to determine how much supplementary thermal or balancing capacity (e.g., CCGT, peaker plants, batteries) to procure.
 
@@ -29,7 +29,7 @@ Every chart, calculation, and API endpoint guarantees strict temporal fidelity t
 
 ---
 
-## 🚀 Live Demo & Repository
+## Live Demo & Repository
 
 - **Frontend (Vercel)**: `https://windiq-uk-energy.vercel.app` *(placeholder / deployment URL)*
 - **Backend (Railway/Render)**: `https://windiq-api-production.up.railway.app` *(placeholder / deployment URL)*
@@ -39,15 +39,15 @@ Every chart, calculation, and API endpoint guarantees strict temporal fidelity t
 
 ---
 
-## 📸 Key Features & Views
+## Key Features & Views
 
-### 1. View 1 — Decision View (⚡ Zero Look-Ahead Bias)
+### 1. View 1 — Decision View (Zero Look-Ahead Bias)
 - **Point-in-Time Filtering**: Interactive ISO-8601 decision cutoff selector (`publishTime <= cutoff`).
 - **Visual Vintage Verification**: Timeline chips display exact forecast publication vintages actively contributing to the curve.
 - **Overlay Comparison**: Synchronized visual alignment between point-in-time forecasts and actual outturn (`FUELHH` WIND stream).
 - **Interactive Metrics**: Real-time peak, trough, and vintage count statistics.
 
-### 2. View 2 — Accuracy View (📊 Quantified Error & Buffer Sizing)
+### 2. View 2 — Accuracy View (Quantified Error & Buffer Sizing)
 - **Statistical Rigour**: Calculates Mean Absolute Error (**MAE**), Root Mean Squared Error (**RMSE**), and Mean Bias ($E[\hat{y} - y]$).
 - **Horizon Stratification**: Stratifies accuracy across 6-hour forecast horizons ($0-6\text{h}, 6-12\text{h}, \dots, 36\text{h}+$):
   $$\text{Horizon} = \text{delivery\_period} - \text{publish\_time}$$
@@ -57,7 +57,7 @@ Every chart, calculation, and API endpoint guarantees strict temporal fidelity t
 
 ---
 
-## 🗂️ File & Directory Structure
+## File & Directory Structure
 
 ```text
 .
@@ -113,7 +113,7 @@ Every chart, calculation, and API endpoint guarantees strict temporal fidelity t
 
 ---
 
-## 🛠️ How to Run Locally
+## How to Run Locally
 
 ### Option A: Via Docker Compose (Recommended)
 
@@ -165,7 +165,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
 
-## 🔬 Deep-Dive: Point-in-Time Correctness
+## Deep-Dive: Point-in-Time Correctness
 
 ### Database Schema Design
 We store each forecast vintage individually in SQLite:
@@ -195,7 +195,7 @@ Because ISO 8601 strings in UTC (`YYYY-MM-DDTHH:MM:SSZ`) sort **lexicographicall
 
 ---
 
-## 📊 Data Source & Fallback Strategy
+## Data Source & Fallback Strategy
 
 Data is streamed directly from official **Elexon BMRS** endpoints:
 1. **Actuals (`FUELHH`)**: Filtered to `fuelType=WIND`. Key fields: `startTime`, `generation`.
@@ -207,7 +207,7 @@ Data is streamed directly from official **Elexon BMRS** endpoints:
 
 ---
 
-## 🤖 AI Tools Disclosure
+## AI Tools Disclosure
 
 As explicitly permitted and required by the challenge instructions:
 - **Claude / Gemini (Antigravity Agentic Assistant)**: Assisted with architectural design, async Elexon API streaming integration, SQL schema index optimisation, Recharts data transformation pipelines, and drafting test coverage scenarios. All mathematical calculations, point-in-time logic, and UI design systems were verified and validated against the Elexon BMRS technical specifications.

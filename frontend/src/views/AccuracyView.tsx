@@ -23,7 +23,7 @@ import {
   ResponsiveContainer, Cell, ReferenceLine,
 } from 'recharts'
 import { format, subDays } from 'date-fns'
-import { getAccuracy, type AccuracyResponse, type HorizonBucket } from '../api/client'
+import { getAccuracy, getIngestStatus, type AccuracyResponse, type HorizonBucket } from '../api/client'
 import { WindTurbine } from '../components/WindTurbine'
 
 /* ─── Animated number ────────────────────────────────────── */
@@ -115,6 +115,16 @@ function HorizonTooltip({ active, payload }: { active?: boolean; payload?: { pay
 /* ─── Main View ──────────────────────────────────────────── */
 
 export function AccuracyView() {
+  useEffect(() => {
+    getIngestStatus().then(st => {
+      if (st && st.data_window && st.data_window.from) {
+        setDeliveryFrom(st.data_window.from.slice(0, 10))
+        setDeliveryTo(st.data_window.to.slice(0, 10))
+        const base = st.data_window.from.slice(0, 7)
+        setCutoff(base + "-15T12:00")
+      }
+    }).catch(() => {})
+  }, [])
   const yesterday = format(subDays(new Date(), 1), 'yyyy-MM-dd')
   const [cutoff, setCutoff] = useState(`${yesterday}T12:00`)
   const [deliveryFrom, setDeliveryFrom] = useState('2026-01-01')

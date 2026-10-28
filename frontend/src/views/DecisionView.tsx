@@ -99,10 +99,18 @@ export function DecisionView() {
   const [ingesting, setIngesting] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
-  // Fetch ingest status on mount
+  // Fetch ingest status on mount & auto-sync parameters to ingested data window
   useEffect(() => {
     getIngestStatus()
-      .then(setStatus)
+      .then(st => {
+        setStatus(st)
+        if (st && st.data_window && st.data_window.from) {
+          const base = st.data_window.from.slice(0, 7) // '2025-10'
+          setCutoff(base + "-15T12:00")
+          setDeliveryFrom(base + "-16")
+          setDeliveryTo(base + "-16")
+        }
+      })
       .catch(() => setStatus(null))
   }, [])
 
