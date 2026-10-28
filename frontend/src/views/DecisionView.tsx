@@ -57,7 +57,7 @@ function CustomTooltip({ active, payload, label }: { active?: boolean; payload?:
         minWidth: 180,
       }}
     >
-      <div style={{ color: '#7a9bbd', marginBottom: 8, fontSize: 11 }}>🕐 {label}</div>
+      <div style={{ color: '#7a9bbd', marginBottom: 8, fontSize: 11 }}> {label}</div>
       {payload.map((entry, i) => (
         <div key={i} style={{ display: 'flex', justifyContent: 'space-between', gap: 16, marginBottom: 4 }}>
           <span style={{ color: entry.color }}>{entry.name}</span>
@@ -211,7 +211,7 @@ export function DecisionView() {
           background: 'rgba(255,184,0,0.04)',
         }}
       >
-        <span style={{ fontSize: 20 }}>⚠️</span>
+        <span style={{ fontSize: 20 }}></span>
         <div>
           <div style={{ fontSize: 13, fontWeight: 700, color: '#ffb800', marginBottom: 4 }}>
             Point-in-Time Correctness
@@ -237,7 +237,7 @@ export function DecisionView() {
               {/* Cutoff time */}
               <div>
                 <label style={{ display: 'block', fontSize: 12, color: '#00d4ff', fontFamily: 'JetBrains Mono, monospace', marginBottom: 6, letterSpacing: '0.06em' }}>
-                  ⏱ DECISION CUTOFF
+                   DECISION CUTOFF
                 </label>
                 <input
                   type="datetime-local"
@@ -253,7 +253,7 @@ export function DecisionView() {
               {/* Delivery From */}
               <div>
                 <label style={{ display: 'block', fontSize: 12, color: '#00ffcc', fontFamily: 'JetBrains Mono, monospace', marginBottom: 6, letterSpacing: '0.06em' }}>
-                  📅 DELIVERY FROM
+                   DELIVERY FROM
                 </label>
                 <input
                   type="date"
@@ -266,7 +266,7 @@ export function DecisionView() {
               {/* Delivery To */}
               <div>
                 <label style={{ display: 'block', fontSize: 12, color: '#7b4cff', fontFamily: 'JetBrains Mono, monospace', marginBottom: 6, letterSpacing: '0.06em' }}>
-                  📅 DELIVERY TO
+                   DELIVERY TO
                 </label>
                 <input
                   type="date"
@@ -283,7 +283,7 @@ export function DecisionView() {
                 disabled={loading}
                 style={{ width: '100%', justifyContent: 'center', marginTop: 4 }}
               >
-                {loading ? <><div className="spinner" style={{ width: 16, height: 16 }} /> Loading…</> : '⚡ Fetch Forecasts'}
+                {loading ? <><div className="spinner" style={{ width: 16, height: 16 }} /> Loading…</> : ' Fetch Forecasts'}
               </button>
 
               <button
@@ -292,7 +292,7 @@ export function DecisionView() {
                 disabled={ingesting}
                 style={{ width: '100%', justifyContent: 'center' }}
               >
-                {ingesting ? '⏳ Ingesting…' : '🔄 Re-ingest from Elexon'}
+                {ingesting ? ' Ingesting…' : ' Re-ingest from Elexon'}
               </button>
             </div>
 
@@ -315,7 +315,7 @@ export function DecisionView() {
 
             {error && (
               <div style={{ marginTop: 16, padding: '10px 14px', borderRadius: 8, background: 'rgba(255,45,120,0.08)', border: '1px solid rgba(255,45,120,0.25)', fontSize: 12, color: '#ff2d78' }}>
-                ⛔ {error}
+                 {error}
               </div>
             )}
           </div>
@@ -371,7 +371,7 @@ export function DecisionView() {
 
             {!loading && data && chartData.length === 0 && (
               <div style={{ height: 380, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 12 }}>
-                <span style={{ fontSize: 40 }}>📭</span>
+                <span style={{ fontSize: 40 }}></span>
                 <p style={{ color: '#7a9bbd', fontSize: 14 }}>No forecasts found for this cutoff/window combination.</p>
                 <p style={{ color: '#3d5a7a', fontSize: 12 }}>Try re-ingesting data or adjusting the date range.</p>
               </div>

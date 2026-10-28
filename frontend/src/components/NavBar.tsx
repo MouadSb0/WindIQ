@@ -92,8 +92,8 @@ export function NavBar({ activeView, setActiveView }: NavBarProps) {
         {/* Nav */}
         <nav style={{ display: 'flex', gap: 8 }}>
           {([
-            { id: 'decision', label: '⚡ Decision View', icon: '⚡' },
-            { id: 'accuracy', label: '📊 Accuracy View', icon: '📊' },
+            { id: 'decision', label: ' Decision View', icon: '' },
+            { id: 'accuracy', label: ' Accuracy View', icon: '' },
           ] as { id: View; label: string; icon: string }[]).map(({ id, label }) => (
             <button
               key={id}

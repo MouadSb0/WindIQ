@@ -173,14 +173,14 @@ export function HeroSection({ setActiveView }: HeroProps) {
             onClick={() => setActiveView('decision')}
             style={{ fontSize: 15, padding: '14px 32px' }}
           >
-            ⚡ Open Decision View
+             Open Decision View
           </button>
           <button
             className="btn-secondary"
             onClick={() => setActiveView('accuracy')}
             style={{ fontSize: 15, padding: '14px 32px' }}
           >
-            📊 Accuracy Analysis
+             Accuracy Analysis
           </button>
         </div>
       </div>
@@ -295,10 +295,10 @@ export function HeroSection({ setActiveView }: HeroProps) {
       >
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 24 }}>
           {[
-            { icon: '🐍', title: 'FastAPI Backend', desc: 'Async Python · aiosqlite · point-in-time SQL filter · Railway deploy' },
-            { icon: '⚛️', title: 'React + TypeScript', desc: 'Vite · Recharts · Framer Motion · Vercel deploy' },
-            { icon: '🏭', title: 'Elexon BMRS', desc: 'WINDFOR forecasts + FUELHH actuals · full vintage history preserved' },
-            { icon: '🎯', title: 'Zero Lookahead Bias', desc: 'publishTime ≤ cutoff filter · correct for any decision time' },
+            { icon: '', title: 'FastAPI Backend', desc: 'Async Python · aiosqlite · point-in-time SQL filter · Railway deploy' },
+            { icon: '', title: 'React + TypeScript', desc: 'Vite · Recharts · Framer Motion · Vercel deploy' },
+            { icon: '', title: 'Elexon BMRS', desc: 'WINDFOR forecasts + FUELHH actuals · full vintage history preserved' },
+            { icon: '', title: 'Zero Lookahead Bias', desc: 'publishTime ≤ cutoff filter · correct for any decision time' },
           ].map((item, i) => (
             <div key={i} style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
               <span style={{ fontSize: 24, flexShrink: 0 }}>{item.icon}</span>

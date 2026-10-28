@@ -178,19 +178,19 @@ export function AccuracyView() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
               <div>
                 <label style={{ display: 'block', fontSize: 12, color: '#00d4ff', fontFamily: 'JetBrains Mono, monospace', marginBottom: 6 }}>
-                  ⏱ DECISION CUTOFF
+                   DECISION CUTOFF
                 </label>
                 <input type="datetime-local" className="input-field" value={cutoff} onChange={e => setCutoff(e.target.value)} />
               </div>
               <div>
                 <label style={{ display: 'block', fontSize: 12, color: '#00ffcc', fontFamily: 'JetBrains Mono, monospace', marginBottom: 6 }}>
-                  📅 ANALYSIS FROM
+                   ANALYSIS FROM
                 </label>
                 <input type="date" className="input-field" value={deliveryFrom} onChange={e => setDeliveryFrom(e.target.value)} />
               </div>
               <div>
                 <label style={{ display: 'block', fontSize: 12, color: '#7b4cff', fontFamily: 'JetBrains Mono, monospace', marginBottom: 6 }}>
-                  📅 ANALYSIS TO
+                   ANALYSIS TO
                 </label>
                 <input type="date" className="input-field" value={deliveryTo} onChange={e => setDeliveryTo(e.target.value)} />
               </div>
@@ -200,12 +200,12 @@ export function AccuracyView() {
                 disabled={loading}
                 style={{ justifyContent: 'center' }}
               >
-                {loading ? <><div className="spinner" style={{ width: 16, height: 16 }} /> Calculating…</> : '📊 Compute Accuracy'}
+                {loading ? <><div className="spinner" style={{ width: 16, height: 16 }} /> Calculating…</> : ' Compute Accuracy'}
               </button>
             </div>
             {error && (
               <div style={{ marginTop: 16, padding: '10px 14px', borderRadius: 8, background: 'rgba(255,45,120,0.08)', border: '1px solid rgba(255,45,120,0.25)', fontSize: 12, color: '#ff2d78' }}>
-                ⛔ {error}
+                 {error}
               </div>
             )}
           </div>
@@ -221,7 +221,7 @@ export function AccuracyView() {
             }}
           >
             <div style={{ fontSize: 12, fontWeight: 700, color: '#ffb800', marginBottom: 10 }}>
-              ⚡ Procurement Implication
+               Procurement Implication
             </div>
             <p style={{ fontSize: 12, color: '#7a9bbd', lineHeight: 1.65 }}>
               MAE at <b style={{ color: '#e8f4ff' }}>day-ahead horizon</b> defines your minimum thermal capacity buffer.
@@ -246,7 +246,7 @@ export function AccuracyView() {
                   sub: 'Mean Absolute Error',
                   value: data.overall.mae,
                   color: '#00d4ff',
-                  icon: '📏',
+                  icon: '',
                   desc: 'Average magnitude of forecast error'
                 },
                 {
@@ -254,7 +254,7 @@ export function AccuracyView() {
                   sub: 'Root Mean Sq. Error',
                   value: data.overall.rmse,
                   color: '#ffb800',
-                  icon: '📐',
+                  icon: '',
                   desc: 'Penalises large errors more heavily'
                 },
                 {
@@ -262,7 +262,7 @@ export function AccuracyView() {
                   sub: 'Systematic over/under',
                   value: data.overall.bias,
                   color: data.overall.bias >= 0 ? '#00ffcc' : '#ff2d78',
-                  icon: '⚖️',
+                  icon: '',
                   desc: data.overall.bias >= 0 ? 'Systematically over-forecasting' : 'Systematically under-forecasting'
                 },
               ].map((m, i) => (
