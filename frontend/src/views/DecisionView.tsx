@@ -218,7 +218,7 @@ export function DecisionView() {
           </div>
           <div style={{ fontSize: 12, color: '#7a9bbd', lineHeight: 1.6 }}>
             Only forecasts where <code style={{ color: '#00d4ff', background: 'rgba(0,212,255,0.08)', padding: '1px 5px', borderRadius: 4 }}>publishTime ≤ cutoff</code> are shown.
-            This eliminates look-ahead bias — you see exactly what a trader would have seen on their desk at the cutoff moment.
+            This eliminates look-ahead bias, you see exactly what a trader would have seen on their desk at the cutoff moment.
             Showing the <em>latest</em> forecast for a delivery period without this filter is a common but fatal modelling error.
           </div>
         </div>

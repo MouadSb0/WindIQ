@@ -160,7 +160,7 @@ export function AccuracyView() {
               Accuracy Analysis
             </h2>
             <p style={{ color: '#7a9bbd', fontSize: 13 }}>
-              MAE · RMSE · Bias — stratified by forecast horizon
+              MAE · RMSE · Bias : stratified by forecast horizon
             </p>
           </div>
         </div>

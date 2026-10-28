@@ -14,9 +14,9 @@ export function Footer() {
         </div>
         <div style={{ display: 'flex', gap: 20 }}>
           {[
-            { label: 'GitHub', href: 'https://github.com' },
+            { label: 'GitHub', href: 'https://github.com/MouadSb0' },
             { label: 'Elexon API', href: 'https://bmrs.elexon.co.uk' },
-            { label: 'README', href: '#' },
+            { label: 'README', href: 'https://github.com/MouadSb0/WindIQ/blob/main/README.md' },
           ].map(link => (
             <a
               key={link.label}

@@ -163,7 +163,7 @@ export function HeroSection({ setActiveView }: HeroProps) {
         >
           Zero look-ahead bias. Correct forecasts at each decision cutoff.
           Built for GB energy traders who need to know exactly what the market
-          knew — and when it knew it.
+          knew, and when it knew it.
         </p>
 
         {/* CTA buttons */}
