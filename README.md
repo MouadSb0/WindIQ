@@ -1,4 +1,4 @@
-WindIQ — Point-in-Time UK Wind Generation Forecast Platform
+WindIQ : Point-in-Time UK Wind Generation Forecast Platform
 
 > **UK Day-Ahead Energy Market Decision Intelligence**  
 > Built for wholesale electricity trading teams procuring reserve/thermal capacity without look-ahead bias.
@@ -41,13 +41,13 @@ Every chart, calculation, and API endpoint guarantees strict temporal fidelity t
 
 ## Key Features & Views
 
-### 1. View 1 — Decision View (Zero Look-Ahead Bias)
+### 1. View 1 - Decision View (Zero Look-Ahead Bias)
 - **Point-in-Time Filtering**: Interactive ISO-8601 decision cutoff selector (`publishTime <= cutoff`).
 - **Visual Vintage Verification**: Timeline chips display exact forecast publication vintages actively contributing to the curve.
 - **Overlay Comparison**: Synchronized visual alignment between point-in-time forecasts and actual outturn (`FUELHH` WIND stream).
 - **Interactive Metrics**: Real-time peak, trough, and vintage count statistics.
 
-### 2. View 2 — Accuracy View (Quantified Error & Buffer Sizing)
+### 2. View 2 - Accuracy View (Quantified Error & Buffer Sizing)
 - **Statistical Rigour**: Calculates Mean Absolute Error (**MAE**), Root Mean Squared Error (**RMSE**), and Mean Bias ($E[\hat{y} - y]$).
 - **Horizon Stratification**: Stratifies accuracy across 6-hour forecast horizons ($0-6\text{h}, 6-12\text{h}, \dots, 36\text{h}+$):
   $$\text{Horizon} = \text{delivery\_period} - \text{publish\_time}$$
