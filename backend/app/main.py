@@ -46,6 +46,17 @@ app.include_router(actuals.router,         prefix="/api/v1", tags=["Actuals"])
 app.include_router(accuracy.router,        prefix="/api/v1", tags=["Accuracy"])
 
 
+@app.get("/", tags=["Root"])
+async def root():
+    return {
+        "status": "ok",
+        "service": "windiq-api",
+        "version": "1.0.0",
+        "docs": "/docs",
+        "health": "/health",
+    }
+
+
 @app.get("/health", tags=["Health"])
 async def health():
     return {"status": "ok", "service": "windiq-api", "version": "1.0.0"}

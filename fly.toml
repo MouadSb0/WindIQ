@@ -26,6 +26,7 @@ primary_region = 'ams'
   cpu_kind = 'shared'
   cpus = 1
 
-[mounts]
-  source = 'wind_data'
-  destination = '/data'
+# Persistent volume: uncomment if a volume named 'wind_data' has been created in Fly dashboard
+# [mounts]
+#   source = 'wind_data'
+#   destination = '/data'
